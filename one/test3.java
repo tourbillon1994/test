@@ -1,7 +1,5 @@
 package one;
-/*
-	最大子序列和
-*/
+// 最大子序列和
 public class test3 {
 	public static void main (String args[]){
 		System.out.println( maxSubSum4(new int[]{1,2,2,-2,-4,4}) );
