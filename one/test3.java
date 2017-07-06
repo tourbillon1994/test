@@ -1,6 +1,6 @@
 package one;
 /*
- *  最大子序列和
+	最大子序列和
 */
 public class test3 {
 	public static void main (String args[]){
