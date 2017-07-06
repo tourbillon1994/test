@@ -1,5 +1,6 @@
 package one;
-// ×î´ó×ÓĞòÁĞºÍ
+
+//æœ€å¤§å­åºåˆ—å’Œ
 public class test3 {
 	public static void main (String args[]){
 		System.out.println( maxSubSum4(new int[]{1,2,2,-2,-4,4}) );
