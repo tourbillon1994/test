@@ -48,7 +48,7 @@ public class test5 {
 		}
 		return array; 
 	}
-	// ÍÆ¼ö²åÈëÅÅĞò
+	// ²åÈëÅÅĞò
 	public static int[] insertSort(int[] array){
 		int in, out ; 
 		for (out = 1; out < array.length; out++) {
