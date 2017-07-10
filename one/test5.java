@@ -3,7 +3,7 @@ package one;
 public class test5 {
 	public static void main(String[] args) {
 		int[] a = {2,34,1,43,121,211};
-		selectSort(a);
+		insertSort(a);
 		for(int i :a ){
 			System.out.print( i + " ");
 		}
@@ -48,8 +48,21 @@ public class test5 {
 		}
 		return array; 
 	}
-	
-	
+	// ÍÆ¼ö²åÈëÅÅĞò
+	public static int[] insertSort(int[] array){
+		int in, out ; 
+		for (out = 1; out < array.length; out++) {
+			int temp = array[out];
+			in = out;
+			while(in > 0 && temp <= array[in-1]){
+				array[in] = array[in-1];
+				in -- ;
+			}
+			array[in] = temp;
+		}
+		
+		return array;
+	}
 	
 	// swap function
 	public static void swap(int[] array, int a, int b) {
