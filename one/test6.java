@@ -36,7 +36,7 @@ public class test6 {
 		if (com[0].equals("Q")) {
 			int max = array[a];
 			// A > B OR A < B TWO SITUATION  
-			//ÕâÀïÒ²¿ÉÒÔÓÃMath.max
+			//è¿™é‡Œå¯ä»¥ç”¨ Math.maxå‡½æ•°
 			if (a < b ) {
 				for( int i = a; i <= b; i ++ ){
 					if (array[i] > max) {
