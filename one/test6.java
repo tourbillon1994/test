@@ -35,7 +35,8 @@ public class test6 {
 		int b = Integer.valueOf(com[2]) - 1;
 		if (com[0].equals("Q")) {
 			int max = array[a];
-			// A > B OR A < B TWO SITUATION  这里也可以用Math.max
+			// A > B OR A < B TWO SITUATION  
+			//这里也可以用Math.max
 			if (a < b ) {
 				for( int i = a; i <= b; i ++ ){
 					if (array[i] > max) {
