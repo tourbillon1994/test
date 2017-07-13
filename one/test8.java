@@ -32,14 +32,15 @@ public class test8 {
 		ArrayList<Integer> lengths = new ArrayList<>(Arrays.asList(abLength));
 		int indexFour = lengths.indexOf(4);
 		int indexTwo = lengths.indexOf(2);
+		// 
 		if (indexFour>=0 && indexTwo >=0) {    // 4 and 2
 			if (abStrings.get(indexTwo)[0].equals( "JOKER") || abStrings.get(indexTwo)[0].equals("joker") )  {
 				return indexTwo == 0 ?  a :  b; 
 			} else
 				return indexFour == 0? a : b ;
-		} else if (indexFour>=0 && indexTwo <0){
+		} else if (indexFour>=0 && indexTwo <0){  // has 4 and not 2 
 			return indexFour == 0 ? a : b ;
-		} else if (indexFour < 0 && indexTwo >= 0) {
+		} else if (indexFour < 0 && indexTwo >= 0) { // has 2 and not 4
 			if (abStrings.get(indexTwo)[0].equals( "JOKER") || abStrings.get(indexTwo)[0].equals("joker") ){
 				return indexTwo == 0 ?  a :  b; 
 			} else
