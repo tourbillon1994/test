@@ -21,7 +21,7 @@ public class binarySearchTree <T extends Comparable< ? super T>> {
 			 this.right = right;
 		}
 	 }
-	 
+	
 	public binarySearchTree() {
 		root = null;
 	}
@@ -34,6 +34,29 @@ public class binarySearchTree <T extends Comparable< ? super T>> {
 	public boolean contains(T element) {
 		return contains(element, root);
 	}
+	
+	public int height(binaryNode<T> node){
+		if (node == null) {
+			return -1;	
+		} else {
+			return 1 + Math.max(height(node.right), height(node.left));
+		}
+	}
+	public void printTree() {
+		if (isEmpty()) {
+			System.out.println("Empty tree");
+		} else
+			printTree(root);
+	}
+	
+	public void printTree(binaryNode<T> node) {
+		if (node != null) {
+			printTree(node.left);
+			System.out.println(node.element);
+			printTree(node.right);
+		}
+	}
+	
 	public T findMax(){
 		if (isEmpty()) {
 			throw new NullPointerException();
