@@ -1,5 +1,6 @@
 package one;
 
+import javax.jws.WebParam.Mode;
 import javax.lang.model.element.Element;
 import javax.swing.text.TabableView;
 
@@ -62,24 +63,49 @@ public class binarySearchTree <T extends Comparable< ? super T>> {
 	public binaryNode<T> findMax(binaryNode<T> node) {
 		if (node == null) {  // node cheak is repeated in findMax() --> iseEmpty
 			return null;
-		} else if (node.left != null) {
-			return findMax(node.left);
+		} else if (node.right != null) {
+			return findMax(node.right);
 		} else  
 			return node;
 	}
 	public binaryNode<T> findMin(binaryNode<T> node) {  // another way 
 		if (node == null) {
 			return null;
-		} else if (node.right == null) {
+		} else if (node.left == null) {
 			return node;
 		} else
-			return findMin(node.right);
+			return findMin(node.left);
 	}
 	public binaryNode<T> insert(T element, binaryNode<T> node) {
-		
+		if (node == null) {
+			return new binaryNode<T>(element, null, null);
+		}
+		int compareR = element.compareTo(node.element);
+		if (compareR > 0 ) {
+			node.right = insert(element, node.right);
+		} else if (compareR < 0 ) {
+			node.left =  insert(element, node.left);
+		} else {
+			;
+		}
+		return node;
 	}
-	public binaryNode<T> remove(T element, binaryNode<T> node) {
-		
+	public binaryNode<T> remove(T element, binaryNode<T> node) {   // very complex
+		if (node == null) {
+			return node;
+		}
+		int compareR = element.compareTo(node.element);
+		if (compareR > 0) {
+			node.right = remove(element, node.right);
+		} else if (compareR < 0) {
+			node.left = remove(element, node.left);
+		} else if (node.left != null && node.right != null) {
+			node.element = findMin(node.right).element;
+			node.right = remove(node.element, node.right);
+		} else {
+			node = (node.left != null) ? node.left :node.right;
+		}
+		return node;
 	}
 	
 	
